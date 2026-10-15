@@ -7,6 +7,8 @@
 
         <title>{{ isset($title) ? $title . ' – ' : '' }}Fenbump Renklup</title>
 
+        <x-favicons />
+
         @fonts
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>

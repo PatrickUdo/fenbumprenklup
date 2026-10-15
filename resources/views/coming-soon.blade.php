@@ -9,6 +9,8 @@
 
         <title>Fenbump Renklup – Hier komt wat moois</title>
 
+        <x-favicons />
+
         @fonts
         @vite(['resources/css/app.css'])
     </head>
