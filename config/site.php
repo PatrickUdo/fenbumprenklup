@@ -11,6 +11,14 @@ return [
         ['label' => 'Contact', 'route' => 'contact'],
     ],
 
+    // "Hier komt wat moois"-pagina. Staat deze aan, dan ziet iedereen die pagina,
+    // behalve ingelogde Twill-gebruikers en wie de previewlink heeft geopend
+    // (/?preview=<COMING_SOON_SECRET>). Het beheer (/admin) blijft bereikbaar.
+    'coming_soon' => [
+        'enabled' => (bool) env('COMING_SOON', false),
+        'secret' => env('COMING_SOON_SECRET'),
+    ],
+
     // Bedrijfsgegevens voor de footer.
     // LET OP: placeholders, vervangen door de echte gegevens.
     'company' => [

@@ -12,7 +12,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->web(append: [
+            \App\Http\Middleware\ComingSoon::class,
+        ]);
+
+        // De previewcookie bevat alleen een hash en hoeft niet versleuteld te worden.
+        $middleware->encryptCookies(except: ['coming_soon_preview']);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

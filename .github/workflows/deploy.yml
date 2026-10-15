@@ -1,0 +1,82 @@
+name: Deploy
+
+# Logt in op de server en werkt daar de app bij: git, composer, npm build en artisan.
+#
+# Benodigde repository secrets (Settings → Secrets and variables → Actions):
+#   SSH_PRIVATE_KEY  private key van een deploy-sleutel; de public key staat in
+#                    ~/.ssh/authorized_keys op de server
+#   SSH_KNOWN_HOSTS  uitvoer van: ssh-keyscan ssh037.hosting-cluster.nl
+#
+# Op de server nodig: git, composer, npm en PHP 8.3+.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  SSH_USER: fenbumprenklupnl
+  SSH_HOST: ssh037.hosting-cluster.nl
+  APP_PATH: apps/fenbumprenklup
+  REPO_URL: https://github.com/PatrickUdo/fenbumprenklup.git
+  BRANCH: main
+  PHP_BIN: php
+  COMPOSER_BIN: composer
+  NPM_BIN: npm
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: SSH instellen
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Deployen op de server
+        run: |
+          ssh -i ~/.ssh/deploy_key "$SSH_USER@$SSH_HOST" bash -s <<EOF
+          set -euo pipefail
+          mkdir -p "$APP_PATH"
+          cd "$APP_PATH"
+
+          # Eerste deploy: map wordt een git-repo; een bestaande .env blijft staan
+          if [ ! -d .git ]; then
+            git init -q
+            git remote add origin "$REPO_URL"
+          fi
+
+          if [ -f artisan ] && [ -d vendor ]; then
+            $PHP_BIN artisan down --retry=15 || true
+          fi
+          # Site gaat altijd weer online, ook als een stap hieronder faalt
+          trap '[ -d vendor ] && $PHP_BIN artisan up || true' EXIT
+
+          git fetch --depth 1 origin "$BRANCH"
+          git reset --hard "origin/$BRANCH"
+
+          $COMPOSER_BIN install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader
+
+          $NPM_BIN ci --no-audit --no-fund
+          $NPM_BIN run build
+
+          mkdir -p storage/app/public storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache
+          [ -e public/storage ] || $PHP_BIN artisan storage:link
+
+          $PHP_BIN artisan migrate --force
+          $PHP_BIN artisan optimize:clear
+          $PHP_BIN artisan optimize
+          EOF
+
+      - name: SSH-sleutel opruimen
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
