@@ -8,6 +8,7 @@
     "require": {
         "php": "^8.3",
         "area17/twill": "^3.6",
+        "blade-ui-kit/blade-heroicons": "^2.7",
         "laravel/framework": "^13.17",
         "laravel/tinker": "^3.0"
     },

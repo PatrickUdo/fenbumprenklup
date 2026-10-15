@@ -4,6 +4,24 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Jost', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+
+    /* Donker, warm antraciet */
+    --color-night: #1a1815;
+    --color-night-800: #22201c;
+    --color-night-700: #2c2924;
+    --color-ivory: #f2ebdd;
+    --color-brass: #c8a96a;
+
+    /* Clubkleuren uit het logo */
+    --color-club-orange: #f58220;
+    --color-club-blue: #21409a;
+    --color-club-gold: #ffc20e;
+}
+
+@layer base {
+    :root {
+        color-scheme: dark;
+    }
 }
