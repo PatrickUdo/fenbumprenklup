@@ -1,12 +1,9 @@
 @php
-    // Placeholder-collectie (dummy-foto's: Achterhoek Tour Rally); later uit Twill.
+    // Later uit Twill.
     $cars = [
-        ['name' => 'Porsche 356 Speedster', 'type' => 'Speedster', 'src' => 'images/dummy/atr-2026_73.webp'],
-        ['name' => 'Porsche 356 Cabriolet', 'type' => 'Cabriolet', 'src' => 'images/dummy/atr-2026_52.webp'],
-        ['name' => 'Porsche 911 Targa', 'type' => 'Targa', 'src' => 'images/dummy/atr-2026_32.webp'],
-        ['name' => 'Porsche 911 Speedster', 'type' => 'Speedster', 'src' => 'images/dummy/atr-2026_49.webp'],
-        ['name' => 'Ferrari 599 GTB Fiorano', 'type' => 'Coupé', 'src' => 'images/dummy/atr-2026_42.webp'],
-        ['name' => 'BMW M5', 'type' => 'Sedan', 'src' => 'images/dummy/atr-2026_64.webp'],
+        ['name' => 'Jaguar E-Type V12', 'type' => 'Coupé', 'src' => 'images/auto/jaguar/03.webp'],
+        ['name' => 'Ferrari', 'type' => 'Coupé', 'src' => 'images/auto/ferrari/07.webp'],
+        ['name' => 'Talbot', 'type' => 'Cabriolet', 'src' => 'images/auto/talbot/04.webp'],
     ];
 @endphp
 
@@ -44,7 +41,7 @@
                 <div class="sticky top-28">
                     <img src="{{ asset($cars[0]['src']) }}"
                          alt="{{ $cars[0]['name'] }}"
-                         class="aspect-[4/5] w-full object-cover transition-opacity duration-300"
+                         class="aspect-[4/3] w-full object-cover transition-opacity duration-300"
                          loading="lazy"
                          data-preview-image>
                 </div>

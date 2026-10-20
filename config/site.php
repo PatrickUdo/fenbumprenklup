@@ -26,7 +26,7 @@ return [
         'visit' => [
             'street' => 'Straatnaam 1',
             'postcode' => '1234 AB',
-            'city' => 'Fenbump',
+            'city' => 'Winterswijk',
         ],
         // Ontvanger van het contactformulier (niet zichtbaar op de site).
         'contact_recipient' => env('CONTACT_RECIPIENT', 'info@example.nl'),

@@ -1,11 +1,10 @@
 <x-layouts.app>
-    {{-- Tekst en foto's zijn placeholders (dummy-foto's: Achterhoek Tour Rally) --}}
-    <x-hero :image="asset('images/dummy/atr-2026_69.webp')"
-            alt="Rode Porsche 356 Cabriolet op een lommerrijke laan"
-            caption="Porsche 356 Cabriolet">
-        <x-slot:title>Klassiekers horen op de weg.</x-slot:title>
+    <x-hero :image="asset('images/auto/jaguar/01.webp')"
+            alt="Rode Jaguar E-Type V12 op een landweg in de winterzon"
+            caption="Jaguar E-Type V12">
+        <x-slot:title>Het behoud van mobiel erfgoed.</x-slot:title>
 
-        Historische auto's, met liefde gerestaureerd en bewaard.
+        Een klassieke auto is zoveel meer dan een vervoersmiddel.
 
         <x-slot:actions>
             <x-text-link :href="route('collectie')" arrow>Bekijk de collectie</x-text-link>

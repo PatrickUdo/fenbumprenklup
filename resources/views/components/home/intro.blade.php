@@ -1,12 +1,11 @@
 @php
-    // Placeholder-tekst en -foto's (dummy: Achterhoek Tour Rally); later beheerbaar via Twill.
     $photos = [
-        ['src' => 'images/dummy/atr-2026_67.webp', 'alt' => 'Bordeauxrode Porsche 356 Coupé met startnummer 236'],
-        ['src' => 'images/dummy/atr-2026_38.webp', 'alt' => 'Oranje Porsche 911 Targa op een landweg'],
-        ['src' => 'images/dummy/atr-2026_39.webp', 'alt' => 'Vooroorlogse raceauto met open cockpit'],
-        ['src' => 'images/dummy/atr-2026_24.webp', 'alt' => 'Groene Porsche 911 met rallyverlichting'],
-        ['src' => 'images/dummy/atr-2026_20.webp', 'alt' => 'Blauwe rallyauto met zwarte motorkap op een bomenlaan'],
-        ['src' => 'images/dummy/atr-2026_37.webp', 'alt' => 'Zilveren Porsche 550 Spyder'],
+        ['src' => 'images/auto/jaguar/21.webp', 'alt' => 'Jaguar E-Type V12 van voren'],
+        ['src' => 'images/auto/ferrari/62.webp', 'alt' => 'Houten stuur met Ferrari-embleem'],
+        ['src' => 'images/auto/talbot/01.webp', 'alt' => 'Talbot cabriolet van voren'],
+        ['src' => 'images/auto/jaguar/67.webp', 'alt' => 'V12-motor van de Jaguar E-Type'],
+        ['src' => 'images/auto/ferrari/08.webp', 'alt' => 'Zilveren Ferrari op een landweg'],
+        ['src' => 'images/auto/talbot/37.webp', 'alt' => 'Klokken in het houten dashboard van de Talbot'],
     ];
 @endphp
 
@@ -15,8 +14,13 @@
         <h2 id="intro-title" class="sr-only">Over Fenbump Renklup</h2>
 
         <p class="max-w-4xl font-display text-3xl leading-[1.18] font-medium text-pretty text-ivory sm:text-4xl lg:text-5xl">
-            Sinds 1962 verzamelen, restaureren en rijden we klassieke auto's. Niet om ze achter glas te zetten,
-            maar om ze op de weg te houden.
+            Het is een tastbaar stuk historie, een technisch kunstwerk en pure emotie op wielen.
+        </p>
+
+        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-pretty text-ivory/70">
+            Bij Fenbump Renklup begrijpen we die passie als geen ander. Wij hebben ons toegelegd op het in stand
+            houden, verfijnen en perfectioneren van uw klassieker, zodat de ziel van de auto behouden blijft voor
+            de toekomst.
         </p>
 
         <div class="mt-10">
