@@ -25,6 +25,12 @@
             @else
                 <h2 class="sr-only">Contactformulier</h2>
 
+                @if (session('contact_failed'))
+                    <p class="mb-10 border-t border-red-300/40 pt-4 text-base text-red-200" role="alert">
+                        Het versturen is helaas niet gelukt. Probeer het later opnieuw.
+                    </p>
+                @endif
+
                 <form method="POST" action="{{ route('contact.store') }}" class="grid gap-x-8 gap-y-8 sm:grid-cols-2" novalidate>
                     @csrf
 

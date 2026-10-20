@@ -28,8 +28,9 @@ return [
             'postcode' => '1234 AB',
             'city' => 'Winterswijk',
         ],
-        // Ontvanger van het contactformulier (niet zichtbaar op de site).
-        'contact_recipient' => env('CONTACT_RECIPIENT', 'info@example.nl'),
+        // Ontvanger van het contactformulier. Staat bewust alleen in .env:
+        // de repository is openbaar en het adres mag nergens zichtbaar zijn.
+        'contact_recipient' => env('CONTACT_RECIPIENT'),
         'kvk' => '00000000',
         'vat' => 'NL000000000B01',
         'hours' => 'Alleen op afspraak',

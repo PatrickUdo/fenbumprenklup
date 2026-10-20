@@ -6,7 +6,9 @@ use App\Mail\ContactMessage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+use Throwable;
 
 class ContactController extends Controller
 {
@@ -39,8 +41,24 @@ class ContactController extends Controller
         }
 
         $data = $validator->validated();
+        $recipient = config('site.company.contact_recipient');
 
-        Mail::to(config('site.company.contact_recipient'))->send(new ContactMessage($data));
+        // De bezoeker krijgt bij een fout alleen een algemene melding te zien;
+        // het ontvangende adres en de technische fout komen alleen in de log.
+        try {
+            if (blank($recipient)) {
+                throw new \RuntimeException('CONTACT_RECIPIENT is niet ingesteld in .env.');
+            }
+
+            Mail::to($recipient)->send(new ContactMessage($data, now()));
+        } catch (Throwable $e) {
+            Log::error('Contactformulier kon niet worden verstuurd: '.$e->getMessage());
+
+            return to_route('contact')
+                ->withInput()
+                ->with('contact_failed', true)
+                ->withFragment('formulier');
+        }
 
         return to_route('contact')->with('contact_sent', true);
     }
