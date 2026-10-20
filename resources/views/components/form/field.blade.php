@@ -23,10 +23,10 @@
     </label>
 
     @if ($textarea)
-        <textarea id="{{ $id }}" name="{{ $name }}" rows="4"
+        <textarea id="{{ $id }}" name="{{ $name }}" rows="8"
                   @if ($required) required @endif
                   @if ($error) aria-invalid="true" aria-describedby="{{ $id }}-error" @endif
-                  class="{{ $fieldClasses }} resize-y">{{ old($name) }}</textarea>
+                  class="{{ $fieldClasses }} min-h-48 resize-y">{{ old($name) }}</textarea>
     @else
         <input id="{{ $id }}" name="{{ $name }}" type="{{ $type }}" value="{{ old($name) }}"
                {{ $attributes->only('autocomplete') }}
