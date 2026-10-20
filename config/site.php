@@ -20,19 +20,20 @@ return [
     ],
 
     // Bedrijfsgegevens voor de footer.
-    // LET OP: placeholders, vervangen door de echte gegevens.
     'company' => [
         'name' => 'Fenbump Renklup',
+        // Statutaire naam, voor de copyrightregel.
+        'legal_name' => 'Fenbump Renklup B.V.',
         'visit' => [
-            'street' => 'Straatnaam 1',
-            'postcode' => '1234 AB',
+            'street' => 'Ambachtsstraat 31',
+            'postcode' => '7102 DW',
             'city' => 'Winterswijk',
         ],
         // Ontvanger van het contactformulier. Staat bewust alleen in .env:
         // de repository is openbaar en het adres mag nergens zichtbaar zijn.
         'contact_recipient' => env('CONTACT_RECIPIENT'),
-        'kvk' => '00000000',
-        'vat' => 'NL000000000B01',
+        'kvk' => '99844214',
+        'vat' => 'NL869156111B01',
         'hours' => 'Alleen op afspraak',
     ],
 

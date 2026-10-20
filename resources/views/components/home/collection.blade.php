@@ -1,9 +1,9 @@
 @php
     // Later uit Twill.
     $cars = [
-        ['name' => 'Jaguar E-Type V12', 'type' => 'Coupé', 'src' => 'images/auto/jaguar/03.webp'],
-        ['name' => 'Ferrari', 'type' => 'Coupé', 'src' => 'images/auto/ferrari/07.webp'],
-        ['name' => 'Talbot', 'type' => 'Cabriolet', 'src' => 'images/auto/talbot/04.webp'],
+        ['slug' => 'jaguar', 'name' => 'Jaguar E-Type V12', 'type' => 'Coupé', 'src' => 'images/auto/jaguar/03.webp'],
+        ['slug' => 'ferrari', 'name' => 'Ferrari', 'type' => 'Coupé', 'src' => 'images/auto/ferrari/07.webp'],
+        ['slug' => 'talbot', 'name' => 'Talbot', 'type' => 'Cabriolet', 'src' => 'images/auto/talbot/04.webp'],
     ];
 @endphp
 
@@ -18,7 +18,7 @@
             <ul class="border-b border-ivory/10 lg:col-span-7">
                 @foreach ($cars as $index => $car)
                     <li class="border-t border-ivory/10">
-                        <a href="{{ route('collectie') }}"
+                        <a href="{{ route('collectie') }}#{{ $car['slug'] }}"
                            class="group flex items-center gap-5 py-5 focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass sm:py-6"
                            data-preview-item
                            data-src="{{ asset($car['src']) }}"

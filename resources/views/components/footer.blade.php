@@ -35,7 +35,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
         <div class="flex flex-col gap-6 border-t border-ivory/10 py-8 md:flex-row md:items-center md:justify-between">
             <p class="flex flex-wrap gap-x-6 gap-y-1 text-xs text-ivory/55">
-                <span>© {{ date('Y') }} {{ $company['name'] }}</span>
+                <span>© {{ date('Y') }} {{ $company['legal_name'] }}</span>
                 <span>KvK {{ $company['kvk'] }}</span>
                 <span>Btw {{ $company['vat'] }}</span>
             </p>
