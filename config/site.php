@@ -37,6 +37,11 @@ return [
         'hours' => 'Alleen op afspraak',
     ],
 
+    // Cookiebanner van Cookiebot. Zonder ID in .env wordt er niets geladen.
+    'cookiebot' => [
+        'id' => env('COOKIEBOT_ID'),
+    ],
+
     // Zoekmachines en delen op social media, per route. Titels tot ~60 tekens,
     // beschrijvingen tot ~155 tekens; afbeeldingen 1200×630 in public/images/og.
     'seo' => [
@@ -61,6 +66,10 @@ return [
                 'title' => 'Wie zijn wij – Fenbump Renklup',
                 'description' => "Maak kennis met Fenbump Renklup: vakmensen in Winterswijk met een diepgewortelde liefde voor historische techniek en klassieke auto's.",
                 'image' => 'images/og/wie-zijn-wij.jpg',
+            ],
+            'cookies' => [
+                'title' => 'Cookies – Fenbump Renklup',
+                'description' => 'Welke cookies de website van Fenbump Renklup gebruikt, waarvoor ze dienen en hoe u uw toestemming aanpast.',
             ],
             'contact' => [
                 'title' => 'Contact – Fenbump Renklup',

@@ -108,3 +108,8 @@ document.querySelectorAll('[data-preview-list]').forEach((list) => {
         item.addEventListener('focus', () => activate(item));
     });
 });
+
+// Cookiebanner opnieuw openen om de toestemming aan te passen
+document.querySelectorAll('[data-cookie-settings]').forEach((button) => {
+    button.addEventListener('click', () => window.Cookiebot?.renew());
+});

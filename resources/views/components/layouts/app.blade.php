@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#1a1815">
 
+        {{-- Cookiebot moet het eerste script op de pagina zijn --}}
+        <x-cookiebot />
+
         <x-seo :title="$title ?? null" />
 
         <x-favicons />

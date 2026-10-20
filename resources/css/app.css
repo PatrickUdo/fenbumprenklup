@@ -25,3 +25,36 @@
         color-scheme: dark;
     }
 }
+
+/* Cookieoverzicht van Cookiebot (cd.js) in de huisstijl */
+@layer components {
+    .cookie-declaration {
+        overflow-x: auto;
+
+        & a {
+            color: var(--color-brass);
+            text-decoration: underline;
+            text-underline-offset: 0.3em;
+        }
+
+        & table {
+            width: 100%;
+            margin-block: 1rem 2rem;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        & th,
+        & td {
+            padding: 0.5rem 0.75rem 0.5rem 0;
+            border-bottom: 1px solid color-mix(in srgb, var(--color-ivory) 10%, transparent);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        & th {
+            color: var(--color-ivory);
+            font-weight: 400;
+        }
+    }
+}
