@@ -41,6 +41,6 @@ class ComingSoon
         $admin = trim(config('twill.admin_app_path', 'admin'), '/');
 
         return ($admin !== '' && $request->is($admin, $admin.'/*'))
-            || $request->is('up');
+            || $request->is('up', 'robots.txt', 'sitemap.xml');
     }
 }

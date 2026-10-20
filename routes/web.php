@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SeoController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');
+Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
 
 Route::view('/', 'home')->name('home');
 Route::view('/projecten', 'projecten')->name('projecten');

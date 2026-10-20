@@ -37,4 +37,36 @@ return [
         'hours' => 'Alleen op afspraak',
     ],
 
+    // Zoekmachines en delen op social media, per route. Titels tot ~60 tekens,
+    // beschrijvingen tot ~155 tekens; afbeeldingen 1200×630 in public/images/og.
+    'seo' => [
+        'default_image' => 'images/og/home.jpg',
+        'pages' => [
+            'home' => [
+                'title' => "Fenbump Renklup | Klassieke auto's in Winterswijk",
+                'description' => "Onderhoud, reparatie en historisch correcte restauratie van klassieke auto's in onze werkplaats in Winterswijk. Met oog voor elk origineel detail.",
+                'image' => 'images/og/home.jpg',
+            ],
+            'projecten' => [
+                'title' => 'Projecten uit de werkplaats – Fenbump Renklup',
+                'description' => "Een kijkje in de werkplaats van Fenbump Renklup in Winterswijk: restauraties, motorrevisies en onderhoud aan klassieke auto's.",
+                'image' => 'images/og/projecten.jpg',
+            ],
+            'collectie' => [
+                'title' => "Collectie klassieke auto's – Fenbump Renklup",
+                'description' => 'De collectie van Fenbump Renklup in Winterswijk, met onder meer een Jaguar E-Type V12, een Ferrari en een Talbot cabriolet.',
+                'image' => 'images/og/collectie.jpg',
+            ],
+            'wie-zijn-wij' => [
+                'title' => 'Wie zijn wij – Fenbump Renklup',
+                'description' => "Maak kennis met Fenbump Renklup: vakmensen in Winterswijk met een diepgewortelde liefde voor historische techniek en klassieke auto's.",
+                'image' => 'images/og/wie-zijn-wij.jpg',
+            ],
+            'contact' => [
+                'title' => 'Contact – Fenbump Renklup',
+                'description' => 'Neem contact op met Fenbump Renklup in Winterswijk voor onderhoud, reparatie of restauratie van uw klassieke auto. Bezoek op afspraak.',
+            ],
+        ],
+    ],
+
 ];

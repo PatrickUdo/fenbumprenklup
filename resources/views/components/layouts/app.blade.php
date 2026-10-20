@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#1a1815">
 
-        <title>{{ isset($title) ? $title . ' – ' : '' }}Fenbump Renklup</title>
+        <x-seo :title="$title ?? null" />
 
         <x-favicons />
 
