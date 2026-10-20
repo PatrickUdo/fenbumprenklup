@@ -24,7 +24,7 @@
     <body class="flex min-h-dvh flex-col bg-night font-sans font-light text-ivory antialiased selection:bg-club-orange selection:text-night">
         <main class="flex flex-1 flex-col items-center justify-center px-6 py-16 text-center">
             <a href="{{ url('/') }}" class="focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass">
-                <img src="{{ asset('images/logo.png') }}" alt="Fenbump Renklup – home" width="608" height="328" class="h-20 w-auto sm:h-24">
+                <x-img src="images/logo.png" alt="Fenbump Renklup – home" sizes="178px" class="h-20 w-auto sm:h-24" />
             </a>
 
             <p class="mt-14 text-sm tracking-[0.3em] text-brass">{{ $code }}</p>

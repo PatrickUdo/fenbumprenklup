@@ -16,7 +16,7 @@
     </head>
     <body class="flex min-h-dvh flex-col bg-night font-sans font-light text-ivory antialiased selection:bg-club-orange selection:text-night">
         <main class="flex flex-1 flex-col items-center justify-center px-6 py-16 text-center">
-            <img src="{{ asset('images/logo.png') }}" alt="Fenbump Renklup" width="608" height="328" class="h-28 w-auto sm:h-36">
+            <x-img src="images/logo.png" alt="Fenbump Renklup" sizes="267px" class="h-28 w-auto sm:h-36" />
 
             <h1 class="mt-12 font-display text-5xl leading-[1.05] font-medium text-balance text-ivory sm:text-6xl lg:text-7xl">
                 Hier komt wat moois.

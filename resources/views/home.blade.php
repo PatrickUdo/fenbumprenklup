@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <x-hero :image="asset('images/auto/jaguar/01.webp')"
+    <x-hero image="images/auto/jaguar/01.webp"
             alt="Rode Jaguar E-Type V12 op een landweg in de winterzon"
             caption="Jaguar E-Type V12">
         <x-slot:title>Het behoud van mobiel erfgoed.</x-slot:title>

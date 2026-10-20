@@ -9,12 +9,16 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
             fonts: [
+                // Alleen gebruikte gewichten; preload alleen wat boven de vouw staat
+                // (broodtekst, menu en koppen). Cursief komt alleen in het mobiele menu voor.
                 bunny('Jost', {
-                    weights: [300, 400, 500],
+                    weights: [300, 400],
+                    preload: [{ weight: 300, style: 'normal' }, { weight: 400, style: 'normal' }],
                 }),
                 bunny('Cormorant Garamond', {
-                    weights: [500, 600],
+                    weights: [500],
                     styles: ['normal', 'italic'],
+                    preload: [{ weight: 500, style: 'normal' }],
                 }),
             ],
         }),

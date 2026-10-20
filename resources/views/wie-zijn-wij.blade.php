@@ -15,9 +15,10 @@
     </section>
 
     <figure class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
-        <img src="{{ asset('images/auto/jaguar/44.webp') }}"
-             alt="Cognackleurige lederen bagageruimte van de Jaguar E-Type, gezien door de geopende achterklep"
-             class="aspect-[4/3] w-full object-cover sm:aspect-[21/9]">
+        <x-img src="images/auto/jaguar/44.webp"
+               alt="Cognackleurige lederen bagageruimte van de Jaguar E-Type, gezien door de geopende achterklep"
+               sizes="(min-width: 1280px) 1184px, 100vw"
+               class="aspect-[4/3] w-full object-cover sm:aspect-[21/9]" />
         <figcaption class="mt-4 text-sm text-ivory/55">Jaguar E-Type V12</figcaption>
     </figure>
 
@@ -41,10 +42,11 @@
         </div>
 
         <figure class="lg:col-span-5 lg:col-start-8">
-            <img src="{{ asset('images/auto/talbot/33.webp') }}"
-                 alt="Interieur van de Talbot met bruin leder en houten dashboard"
-                 class="aspect-[4/5] w-full object-cover"
-                 loading="lazy">
+            <x-img src="images/auto/talbot/33.webp"
+                   alt="Interieur van de Talbot met bruin leder en houten dashboard"
+                   sizes="(min-width: 1024px) 42vw, 100vw"
+                   class="aspect-[4/5] w-full object-cover"
+                   loading="lazy" />
             <figcaption class="mt-4 text-sm text-ivory/55">Talbot</figcaption>
         </figure>
     </section>
@@ -53,10 +55,11 @@
     <section class="bg-night-800 py-24 sm:py-32">
         <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-8 lg:grid-cols-12 lg:items-center lg:gap-8 lg:px-12">
             <figure class="lg:col-span-6">
-                <img src="{{ asset('images/auto/ferrari/48.webp') }}"
-                     alt="Motorruimte van de zilveren Ferrari"
-                     class="aspect-[4/3] w-full object-cover"
-                     loading="lazy">
+                <x-img src="images/auto/ferrari/48.webp"
+                       alt="Motorruimte van de zilveren Ferrari"
+                       sizes="(min-width: 1024px) 50vw, 100vw"
+                       class="aspect-[4/3] w-full object-cover"
+                       loading="lazy" />
                 <figcaption class="mt-4 text-sm text-ivory/55">Ferrari</figcaption>
             </figure>
 

@@ -21,12 +21,12 @@
                         <a href="{{ route('collectie') }}#{{ $car['slug'] }}"
                            class="group flex items-center gap-5 py-5 focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass sm:py-6"
                            data-preview-item
-                           data-src="{{ asset($car['src']) }}"
+                           data-src="{{ \App\Support\ResponsiveImage::url(\App\Support\ResponsiveImage::variantPath($car['src'], 800)) }}"
                            data-alt="{{ $car['name'] }}"
                            @if ($index === 0) data-active @endif>
-                            <img src="{{ asset($car['src']) }}" alt=""
-                                 class="aspect-[3/2] w-20 shrink-0 object-cover sm:w-24 lg:hidden"
-                                 loading="lazy">
+                            <x-img :src="$car['src']" sizes="96px"
+                                   class="aspect-[3/2] w-20 shrink-0 object-cover sm:w-24 lg:hidden"
+                                   loading="lazy" />
                             <span class="flex-1 font-display text-2xl text-ivory/75 transition-colors duration-300 group-hover:text-ivory group-focus-visible:text-ivory lg:group-data-active:text-ivory sm:text-3xl lg:text-4xl">
                                 {{ $car['name'] }}
                             </span>
@@ -39,7 +39,8 @@
             {{-- Voorbeeldfoto: wisselt mee met de auto waar je overheen gaat --}}
             <div class="hidden lg:col-span-4 lg:col-start-9 lg:block">
                 <div class="sticky top-28">
-                    <img src="{{ asset($cars[0]['src']) }}"
+                    {{-- Geen srcset: het script wisselt src naar de 800w-versie van de gekozen auto --}}
+                    <img src="{{ \App\Support\ResponsiveImage::url(\App\Support\ResponsiveImage::variantPath($cars[0]['src'], 800)) }}"
                          alt="{{ $cars[0]['name'] }}"
                          class="aspect-[4/3] w-full object-cover transition-opacity duration-300"
                          loading="lazy"

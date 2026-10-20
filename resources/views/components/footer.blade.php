@@ -6,7 +6,7 @@
 <footer class="border-t border-ivory/10 text-sm">
     <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:grid-cols-2 sm:px-8 lg:grid-cols-12 lg:gap-8 lg:px-12 lg:py-20">
         <div class="sm:col-span-2 lg:col-span-4">
-            <img src="{{ asset('images/logo.png') }}" alt="{{ $company['name'] }}" width="608" height="328" class="h-16 w-auto" loading="lazy">
+            <x-img src="images/logo.png" :alt="$company['name']" sizes="119px" class="h-16 w-auto" loading="lazy" />
             <p class="mt-6 max-w-64 leading-relaxed text-ivory/55">Klassieke auto's, gerestaureerd en bewaard sinds 1962.</p>
         </div>
 

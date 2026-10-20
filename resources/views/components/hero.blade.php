@@ -1,4 +1,5 @@
 @props([
+    // Pad binnen public/, bijv. images/auto/jaguar/01.webp
     'image',
     'alt' => '',
     'caption' => null,
@@ -7,10 +8,11 @@
 <section class="relative isolate overflow-hidden lg:flex lg:min-h-[calc(100svh-4.6rem)] lg:items-end">
     {{-- Tot lg staat de foto als blok boven de tekst; daarboven schuift hij naar rechts, naast de tekst --}}
     <div class="relative aspect-[4/3] sm:aspect-[16/10] lg:absolute lg:inset-0 lg:left-[30%] lg:-z-20 lg:aspect-auto">
-        <img src="{{ $image }}"
-             alt="{{ $alt }}"
-             class="size-full object-cover object-[50%_45%]"
-             fetchpriority="high">
+        <x-img :src="$image"
+               :alt="$alt"
+               sizes="(min-width: 1024px) 70vw, 100vw"
+               class="size-full object-cover object-[50%_45%]"
+               fetchpriority="high" />
         <div class="absolute inset-x-0 -bottom-px h-2/3 bg-gradient-to-t from-night from-[2px] to-transparent lg:hidden" aria-hidden="true"></div>
         <div class="absolute inset-y-0 left-0 hidden w-1/2 bg-gradient-to-r from-night to-transparent lg:block" aria-hidden="true"></div>
     </div>

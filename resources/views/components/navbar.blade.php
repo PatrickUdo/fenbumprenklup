@@ -5,7 +5,7 @@
 <header class="sticky top-0 z-40 border-b border-ivory/10 bg-night/85 backdrop-blur-md">
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-8 px-4 py-3 sm:px-8 lg:px-12" aria-label="Hoofdmenu">
         <a href="{{ route('home') }}" class="shrink-0 focus-visible:outline-1 focus-visible:outline-offset-8 focus-visible:outline-brass">
-            <img src="{{ asset('images/logo.png') }}" alt="Fenbump Renklup – home" width="608" height="328" class="h-12 w-auto sm:h-14">
+            <x-img src="images/logo.png" alt="Fenbump Renklup – home" sizes="104px" class="h-12 w-auto sm:h-14" />
         </a>
 
         <ul class="hidden items-center gap-8 md:flex lg:gap-12">

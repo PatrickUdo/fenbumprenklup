@@ -1,6 +1,8 @@
 @props([
     // Lijst van ['src' => pad binnen public/, 'alt' => beschrijving]
     'photos' => [],
+    // Weergavebreedte van één foto; standaard 2 kolommen, vanaf lg 3 kolommen
+    'sizes' => '(min-width: 1280px) 400px, (min-width: 1024px) 31vw, 50vw',
 ])
 
 <div {{ $attributes->class('grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-3') }} data-gallery>
@@ -8,12 +10,13 @@
         <button type="button"
                 class="group relative block overflow-hidden bg-night-700 focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-brass"
                 data-gallery-item
-                data-src="{{ asset($photo['src']) }}"
+                data-src="{{ \App\Support\ResponsiveImage::url($photo['src']) }}"
                 data-alt="{{ $photo['alt'] }}">
-            <img src="{{ asset($photo['src']) }}"
-                 alt="{{ $photo['alt'] }}"
-                 class="aspect-[3/2] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-110"
-                 loading="lazy">
+            <x-img :src="$photo['src']"
+                   :alt="$photo['alt']"
+                   :sizes="$sizes"
+                   class="aspect-[3/2] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-110"
+                   loading="lazy" />
             <span class="sr-only">Vergroot foto {{ $index + 1 }} van {{ count($photos) }}</span>
         </button>
     @endforeach
