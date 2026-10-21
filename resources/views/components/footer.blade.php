@@ -38,6 +38,7 @@
                 <span>© {{ date('Y') }} {{ $company['legal_name'] }}</span>
                 <span>KvK {{ $company['kvk'] }}</span>
                 <span>Btw {{ $company['vat'] }}</span>
+                <a href="{{ route('privacy') }}" class="underline decoration-ivory/25 underline-offset-4 transition-colors hover:text-ivory focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass">Privacy</a>
                 <a href="{{ route('cookies') }}" class="underline decoration-ivory/25 underline-offset-4 transition-colors hover:text-ivory focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass">Cookies</a>
                 @if (config('site.cookiebot.id'))
                     <button type="button" class="underline decoration-ivory/25 underline-offset-4 transition-colors hover:text-ivory focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass" data-cookie-settings>

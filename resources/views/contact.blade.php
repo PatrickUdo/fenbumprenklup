@@ -49,6 +49,11 @@
                     <x-form.field name="phone" label="Telefoonnummer" type="tel" autocomplete="tel" :required="false" :errors="$contactErrors" class="sm:col-span-2" />
                     <x-form.field name="message" label="Bericht" textarea :value="$message" :errors="$contactErrors" class="sm:col-span-2" />
 
+                    <p class="text-sm leading-relaxed text-ivory/55 sm:col-span-2">
+                        Wij gebruiken uw gegevens alleen om uw vraag te beantwoorden. Lees meer in onze
+                        <a href="{{ route('privacy') }}" class="text-ivory/80 underline decoration-ivory/30 underline-offset-4 hover:text-ivory">privacyverklaring</a>.
+                    </p>
+
                     <div class="sm:col-span-2">
                         <button type="submit"
                                 class="group inline-flex items-center gap-3 border border-ivory/30 px-6 py-3 text-base text-ivory transition-colors duration-300 hover:border-brass hover:bg-brass hover:text-night focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass">

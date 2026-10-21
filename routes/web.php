@@ -15,6 +15,7 @@ Route::get('/collectie/{slug}', [CollectieController::class, 'show'])->name('col
 Route::view('/wie-zijn-wij', 'wie-zijn-wij')->name('wie-zijn-wij');
 Route::view('/contact', 'contact')->name('contact');
 Route::view('/cookies', 'cookies')->name('cookies');
+Route::view('/privacy', 'privacy')->name('privacy');
 
 Route::post('/contact', [ContactController::class, 'store'])
     ->middleware('throttle:5,1')

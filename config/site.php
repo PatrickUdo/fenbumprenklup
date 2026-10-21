@@ -71,6 +71,10 @@ return [
                 'title' => 'Cookieverklaring – Fenbump Renklup',
                 'description' => 'Cookieverklaring van Fenbump Renklup: de website gebruikt alleen functionele cookies, zonder tracking, analyse of advertenties.',
             ],
+            'privacy' => [
+                'title' => 'Privacyverklaring – Fenbump Renklup',
+                'description' => 'Hoe Fenbump Renklup omgaat met uw persoonsgegevens: welke gegevens wij verwerken, waarom, hoe lang wij ze bewaren en welke rechten u heeft.',
+            ],
             'contact' => [
                 'title' => 'Contact – Fenbump Renklup',
                 'description' => 'Neem contact op met Fenbump Renklup in Winterswijk voor onderhoud, reparatie of restauratie van uw klassieke auto. Bezoek op afspraak.',
