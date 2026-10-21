@@ -72,11 +72,8 @@
             <section>
                 <h2 class="font-display text-3xl font-medium text-ivory sm:text-4xl">Met wie delen wij uw gegevens?</h2>
                 <p class="mt-5">
-                    Wij verkopen uw gegevens nooit aan anderen en delen ze niet voor marketingdoeleinden. Wij schakelen
-                    alleen partijen in die ons helpen onze diensten te leveren, zoals onze hostingpartij (voor de
-                    website) en Microsoft 365 (voor e-mail). Met deze partijen hebben wij afspraken gemaakt over de
-                    beveiliging en vertrouwelijkheid van uw gegevens. Daarnaast verstrekken wij gegevens alleen als
-                    dat wettelijk verplicht is.
+                    Wij verkopen uw gegevens niet en delen ze alleen met partijen die nodig zijn om de website en onze
+                    e-mail te laten werken, of als de wet ons daartoe verplicht.
                 </p>
                 <p class="mt-5">
                     De website gebruikt geen analyse- of advertentiediensten en laadt geen lettertypen, video's of
