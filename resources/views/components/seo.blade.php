@@ -1,6 +1,13 @@
 @props([
     // Paginatitel zonder sitenaam; alleen gebruikt als config/site.php geen titel voor deze route heeft.
     'title' => null,
+    // Voor pagina's zonder vaste route in config/site.php, zoals een auto uit de collectie
+    'description' => null,
+    'image' => null,
+    // Extra kruimelpad tussen Home en deze pagina: [['naam', 'url'], ...]
+    'breadcrumbs' => null,
+    // Extra structured data voor deze pagina (schema.org-object)
+    'schema' => null,
 ])
 
 @php
@@ -13,8 +20,8 @@
     $canonical = $base.(request()->path() === '/' ? '/' : '/'.request()->path());
 
     $fullTitle = $page['title'] ?? ($title ? "{$title} – {$company['name']}" : $company['name']);
-    $description = $page['description'] ?? null;
-    $image = $base.'/'.($page['image'] ?? config('site.seo.default_image'));
+    $description = $page['description'] ?? $description;
+    $image = $base.'/'.($page['image'] ?? $image ?? config('site.seo.default_image'));
 
     $business = [
         '@type' => 'AutoRepair',
@@ -53,16 +60,21 @@
         $business,
     ];
 
-    // Kruimelpad voor subpagina's: Home › Pagina
+    // Kruimelpad voor subpagina's: Home › Pagina (of een meegegeven pad)
     $navItem = collect(config('site.navigation'))->firstWhere('route', $routeName);
-    if ($navItem && $routeName !== 'home') {
+    $trail = $breadcrumbs ?? ($navItem && $routeName !== 'home' ? [[$navItem['label'], $canonical]] : []);
+    if ($trail) {
         $graph[] = [
             '@type' => 'BreadcrumbList',
-            'itemListElement' => [
-                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => $base.'/'],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => $navItem['label'], 'item' => $canonical],
-            ],
+            'itemListElement' => collect([['Home', $base.'/'], ...$trail])
+                ->values()
+                ->map(fn (array $crumb, int $i) => ['@type' => 'ListItem', 'position' => $i + 1, 'name' => $crumb[0], 'item' => $crumb[1]])
+                ->all(),
         ];
+    }
+
+    if ($schema) {
+        $graph[] = $schema;
     }
 
     $jsonLd = json_encode(

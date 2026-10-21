@@ -2,7 +2,7 @@
     $photos = [
         ['src' => 'images/auto/jaguar/21.webp', 'alt' => 'Jaguar E-Type V12 van voren'],
         ['src' => 'images/auto/ferrari/62.webp', 'alt' => 'Houten stuur met Ferrari-embleem'],
-        ['src' => 'images/auto/talbot/01.webp', 'alt' => 'Talbot cabriolet van voren'],
+        ['src' => 'images/auto/talbot/01.webp', 'alt' => 'Talbot Sports Tourer van achteren'],
         ['src' => 'images/auto/jaguar/67.webp', 'alt' => 'V12-motor van de Jaguar E-Type'],
         ['src' => 'images/auto/ferrari/08.webp', 'alt' => 'Zilveren Ferrari op een landweg'],
         ['src' => 'images/auto/talbot/37.webp', 'alt' => 'Klokken in het houten dashboard van de Talbot'],

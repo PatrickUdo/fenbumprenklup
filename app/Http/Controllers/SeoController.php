@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\Cars;
 use Illuminate\Http\Response;
 
 class SeoController extends Controller
@@ -26,9 +27,10 @@ class SeoController extends Controller
     {
         $base = rtrim(config('app.url'), '/');
 
-        // Alle pagina's uit het hoofdmenu, met het hoofddomein uit APP_URL.
+        // Alle pagina's uit het hoofdmenu en alle auto's, met het hoofddomein uit APP_URL.
         $urls = collect(config('site.navigation'))
-            ->map(fn (array $item) => $base.route($item['route'], absolute: false));
+            ->map(fn (array $item) => $base.route($item['route'], absolute: false))
+            ->merge(Cars::all()->map(fn (array $car) => $base.route('collectie.show', $car['slug'], absolute: false)));
 
         return response()
             ->view('sitemap', ['urls' => $urls])

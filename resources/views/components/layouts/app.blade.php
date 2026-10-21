@@ -8,7 +8,11 @@
         {{-- Cookiebot moet het eerste script op de pagina zijn --}}
         <x-cookiebot />
 
-        <x-seo :title="$title ?? null" />
+        <x-seo :title="$title ?? null"
+               :description="$description ?? null"
+               :image="$image ?? null"
+               :breadcrumbs="$breadcrumbs ?? null"
+               :schema="$schema ?? null" />
 
         <x-favicons />
 

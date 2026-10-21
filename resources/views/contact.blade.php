@@ -1,5 +1,9 @@
 @php
     $contactErrors = $errors->getBag('contact');
+
+    // Vanaf een auto in de collectie (?auto=jaguar): bericht alvast invullen
+    $car = \App\Support\Cars::find((string) request('auto'));
+    $message = $car ? "Ik heb interesse in de {$car['title']}." : null;
 @endphp
 
 <x-layouts.app title="Contact">
@@ -43,7 +47,7 @@
                     <x-form.field name="name" label="Naam" autocomplete="name" :errors="$contactErrors" />
                     <x-form.field name="email" label="E-mailadres" type="email" autocomplete="email" :errors="$contactErrors" />
                     <x-form.field name="phone" label="Telefoonnummer" type="tel" autocomplete="tel" :required="false" :errors="$contactErrors" class="sm:col-span-2" />
-                    <x-form.field name="message" label="Bericht" textarea :errors="$contactErrors" class="sm:col-span-2" />
+                    <x-form.field name="message" label="Bericht" textarea :value="$message" :errors="$contactErrors" class="sm:col-span-2" />
 
                     <div class="sm:col-span-2">
                         <button type="submit"

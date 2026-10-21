@@ -59,7 +59,7 @@ return [
             ],
             'collectie' => [
                 'title' => "Collectie klassieke auto's – Fenbump Renklup",
-                'description' => 'De collectie van Fenbump Renklup in Winterswijk, met onder meer een Jaguar E-Type V12, een Ferrari en een Talbot cabriolet.',
+                'description' => "Klassiekers te koop bij Fenbump Renklup in Winterswijk: Jaguar E-Type V12, Ferrari 330 GT, Talbot 3-Litre, Citroën DS19 Cabriolet en Glas 1700 GT.",
                 'image' => 'images/og/collectie.jpg',
             ],
             'wie-zijn-wij' => [
