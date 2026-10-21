@@ -84,6 +84,10 @@
                             </div>
                         @endforeach
                     </dl>
+                    <p class="mt-4 text-sm leading-relaxed text-ivory/50">
+                        Alle informatie is met zorg samengesteld maar vrijblijvend; zie onze
+                        <a href="{{ route('disclaimer') }}" class="underline decoration-ivory/30 underline-offset-4 hover:text-ivory">disclaimer</a>.
+                    </p>
 
                     <div class="mt-10 bg-night-800 p-6 sm:p-8">
                         <p class="font-display text-2xl text-ivory">Interesse in deze auto?</p>

@@ -75,6 +75,10 @@ return [
                 'title' => 'Privacyverklaring – Fenbump Renklup',
                 'description' => 'Hoe Fenbump Renklup omgaat met uw persoonsgegevens: welke gegevens wij verwerken, waarom, hoe lang wij ze bewaren en welke rechten u heeft.',
             ],
+            'disclaimer' => [
+                'title' => 'Disclaimer – Fenbump Renklup',
+                'description' => 'Disclaimer van Fenbump Renklup: informatie op deze website, ook over auto\'s in de collectie, is met zorg samengesteld maar vrijblijvend.',
+            ],
             'contact' => [
                 'title' => 'Contact – Fenbump Renklup',
                 'description' => 'Neem contact op met Fenbump Renklup in Winterswijk voor onderhoud, reparatie of restauratie van uw klassieke auto. Bezoek op afspraak.',
