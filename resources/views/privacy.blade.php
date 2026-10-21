@@ -49,17 +49,6 @@
                     gerechtvaardigd belang om uw vraag te beantwoorden.
                 </p>
 
-                <h3 class="mt-8 text-xl text-ivory">Klanten</h3>
-                <p class="mt-3">
-                    Koopt of verkoopt u een auto via ons, of laat u onderhoud of een restauratie uitvoeren, dan
-                    verwerken wij de gegevens die nodig zijn om de overeenkomst uit te voeren. Denk aan uw naam, adres,
-                    telefoonnummer, e-mailadres, de gegevens van de auto en betaalgegevens.
-                </p>
-                <p class="mt-3 text-base text-ivory/60">
-                    Grondslag: het uitvoeren van de overeenkomst en het voldoen aan wettelijke verplichtingen, zoals de
-                    fiscale bewaarplicht.
-                </p>
-
                 <h3 class="mt-8 text-xl text-ivory">Bezoek aan de website</h3>
                 <p class="mt-3">
                     Om de website goed en veilig te laten werken, slaan wij tijdens uw bezoek uw IP-adres en het type
@@ -75,8 +64,7 @@
             <section>
                 <h2 class="font-display text-3xl font-medium text-ivory sm:text-4xl">Hoe lang bewaren wij uw gegevens?</h2>
                 <ul class="mt-5 list-disc space-y-2 pl-5 marker:text-brass">
-                    <li><span class="text-ivory">Berichten via het contactformulier:</span> zolang nodig om uw vraag af te handelen, en uiterlijk twee jaar na het laatste contact. Leidt uw vraag tot een overeenkomst, dan geldt de termijn hieronder.</li>
-                    <li><span class="text-ivory">Klantgegevens en facturen:</span> zeven jaar, vanwege de wettelijke fiscale bewaarplicht.</li>
+                    <li><span class="text-ivory">Berichten via het contactformulier:</span> zolang nodig om uw vraag af te handelen, en uiterlijk twee jaar na het laatste contact.</li>
                     <li><span class="text-ivory">Sessiegegevens van de website:</span> {{ $sessionDuration }} na uw laatste bezoek.</li>
                 </ul>
             </section>
@@ -87,9 +75,8 @@
                     Wij verkopen uw gegevens nooit aan anderen en delen ze niet voor marketingdoeleinden. Wij schakelen
                     alleen partijen in die ons helpen onze diensten te leveren, zoals onze hostingpartij (voor de
                     website) en Microsoft 365 (voor e-mail). Met deze partijen hebben wij afspraken gemaakt over de
-                    beveiliging en vertrouwelijkheid van uw gegevens. Daarnaast verstrekken wij gegevens als dat
-                    wettelijk verplicht is, bijvoorbeeld aan de RDW bij de overschrijving van een auto of aan de
-                    Belastingdienst.
+                    beveiliging en vertrouwelijkheid van uw gegevens. Daarnaast verstrekken wij gegevens alleen als
+                    dat wettelijk verplicht is.
                 </p>
                 <p class="mt-5">
                     De website gebruikt geen analyse- of advertentiediensten en laadt geen lettertypen, video's of
