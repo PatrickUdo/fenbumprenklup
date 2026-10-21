@@ -68,8 +68,8 @@ return [
                 'image' => 'images/og/wie-zijn-wij.jpg',
             ],
             'cookies' => [
-                'title' => 'Cookies – Fenbump Renklup',
-                'description' => 'Welke cookies de website van Fenbump Renklup gebruikt, waarvoor ze dienen en hoe u uw toestemming aanpast.',
+                'title' => 'Cookieverklaring – Fenbump Renklup',
+                'description' => 'Cookieverklaring van Fenbump Renklup: de website gebruikt alleen functionele cookies, zonder tracking, analyse of advertenties.',
             ],
             'contact' => [
                 'title' => 'Contact – Fenbump Renklup',
