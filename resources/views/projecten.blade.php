@@ -1,6 +1,12 @@
 @php
-    // Later uit Twill. Volgorde zoals aangeleverd (op datum van opname).
-    $photos = collect(range(1, 59))
+    // Later uit Twill. Op datum van opname: 1–59 (eerste levering) met 60–68
+    // (tweede levering) op hun plek ertussen.
+    $order = [
+        66, 67, ...range(1, 7), 68, 63, ...range(8, 18), 64, ...range(19, 25), 65, ...range(26, 34),
+        62, ...range(35, 41), 60, ...range(42, 43), 61, ...range(44, 59),
+    ];
+
+    $photos = collect($order)
         ->map(fn (int $number) => [
             'src' => sprintf('images/projecten/%02d.webp', $number),
             'alt' => 'Projectfoto',
