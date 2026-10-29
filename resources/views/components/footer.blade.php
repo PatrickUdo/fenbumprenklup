@@ -41,11 +41,9 @@
                 <a href="{{ route('privacy') }}" class="underline decoration-ivory/25 underline-offset-4 transition-colors hover:text-ivory focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass">Privacy</a>
                 <a href="{{ route('cookies') }}" class="underline decoration-ivory/25 underline-offset-4 transition-colors hover:text-ivory focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass">Cookies</a>
                 <a href="{{ route('disclaimer') }}" class="underline decoration-ivory/25 underline-offset-4 transition-colors hover:text-ivory focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass">Disclaimer</a>
-                @if (config('site.cookiebot.id'))
-                    <button type="button" class="underline decoration-ivory/25 underline-offset-4 transition-colors hover:text-ivory focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass" data-cookie-settings>
-                        Cookie-instellingen
-                    </button>
-                @endif
+                <button type="button" class="underline decoration-ivory/25 underline-offset-4 transition-colors hover:text-ivory focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass" data-consent-open>
+                    Cookie-instellingen
+                </button>
             </p>
 
             <nav aria-label="Footermenu">

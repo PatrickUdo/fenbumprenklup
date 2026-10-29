@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#1a1815">
 
-        {{-- Cookiebot moet het eerste script op de pagina zijn --}}
-        <x-cookiebot />
+        {{-- Cookietoestemming (consent-for-laravel); vóór alle andere scripts --}}
+        <x-consent::head />
 
         <x-seo :title="$title ?? null"
                :description="$description ?? null"
@@ -31,5 +31,7 @@
         </main>
 
         <x-footer />
+
+        <x-consent::banner />
     </body>
 </html>

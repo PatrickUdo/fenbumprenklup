@@ -1,6 +1,5 @@
 @php
     $company = config('site.company');
-    $cookiebotId = config('site.cookiebot.id');
 
     // Namen en bewaartermijnen uit de configuratie, zodat deze pagina klopt als die verandert.
     $lifetime = (int) config('session.lifetime');
@@ -22,13 +21,18 @@
             'purpose' => 'Alleen voor wie een previewlink van ons heeft gekregen: onthoudt dat u de website mag bekijken voordat deze openbaar is.',
             'duration' => 'Maximaal 400 dagen',
         ],
+        [
+            'name' => config('consent.cookie.name'),
+            'purpose' => 'Onthoudt uw keuzes uit de cookie-instellingen. Wordt alleen geplaatst als u die keuzes opslaat.',
+            'duration' => config('consent.retention_days').' dagen',
+        ],
     ];
 @endphp
 
 <x-layouts.app title="Cookies">
     <section class="mx-auto max-w-7xl px-4 pt-20 pb-24 sm:px-8 sm:pt-28 sm:pb-32 lg:px-12 lg:pt-32">
         <h1 class="font-display text-5xl font-medium text-ivory sm:text-6xl lg:text-7xl">Cookieverklaring</h1>
-        <p class="mt-6 text-sm text-ivory/55">Laatst bijgewerkt: 21 oktober 2026</p>
+        <p class="mt-6 text-sm text-ivory/55">Laatst bijgewerkt: 29 oktober 2026</p>
 
         <div class="mt-12 max-w-3xl space-y-14 text-lg leading-relaxed text-pretty text-ivory/75">
             <section>
@@ -45,7 +49,7 @@
                     Deze website gebruikt alleen <strong class="font-normal text-ivory">functionele cookies</strong>: cookies die nodig zijn om
                     de website goed en veilig te laten werken. Wij gebruiken geen cookies om uw surfgedrag te volgen,
                     geen analytische cookies en geen advertentie- of social-mediacookies. Er worden ook geen cookies van
-                    andere partijen geplaatst{{ $cookiebotId ? ', behalve de cookie waarmee Cookiebot uw cookievoorkeur onthoudt' : '' }}.
+                    andere partijen geplaatst.
                 </p>
 
                 <div class="mt-8 overflow-x-auto">
@@ -83,20 +87,13 @@
                     daar eerst uw toestemming voor en passen wij deze verklaring aan.
                 </p>
 
-                @if ($cookiebotId)
-                    <div class="mt-8">
-                        <button type="button"
-                                class="group inline-flex items-center gap-3 border border-ivory/30 px-6 py-3 text-base text-ivory transition-colors duration-300 hover:border-brass hover:bg-brass hover:text-night focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass"
-                                data-cookie-settings>
-                            Cookie-instellingen aanpassen
-                        </button>
-                    </div>
-
-                    {{-- Overzicht van alle cookies, door Cookiebot bijgehouden --}}
-                    <div class="cookie-declaration mt-10 border-t border-ivory/10 pt-8 text-base">
-                        <script id="CookieDeclaration" src="https://consent.cookiebot.com/{{ $cookiebotId }}/cd.js" type="text/javascript" async></script>
-                    </div>
-                @endif
+                <div class="mt-8">
+                    <button type="button"
+                            class="group inline-flex items-center gap-3 border border-ivory/30 px-6 py-3 text-base text-ivory transition-colors duration-300 hover:border-brass hover:bg-brass hover:text-night focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-brass"
+                            data-consent-open>
+                        Cookie-instellingen bekijken
+                    </button>
+                </div>
             </section>
 
             <section>

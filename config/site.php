@@ -37,11 +37,6 @@ return [
         'hours' => 'Alleen op afspraak',
     ],
 
-    // Cookiebanner van Cookiebot. Zonder ID in .env wordt er niets geladen.
-    'cookiebot' => [
-        'id' => env('COOKIEBOT_ID'),
-    ],
-
     // Zoekmachines en delen op social media, per route. Titels tot ~60 tekens,
     // beschrijvingen tot ~155 tekens; afbeeldingen 1200×630 in public/images/og.
     'seo' => [
